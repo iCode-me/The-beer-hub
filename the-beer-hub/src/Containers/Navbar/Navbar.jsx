@@ -4,12 +4,21 @@ import './Navbar.scss'
 const Navbar = () => {
   return (
     <div className="navBar">
-      <input type="text" placeholder="Search..."></input>
+      <input type="text" placeholder="Search..." className="search"></input>
 
       <ul>
-        <li>High ABV(Higher than 6.0%)</li><input type ="checkbox"></input>
-        <li>Classic Range</li><input type ="checkbox"></input>
-        <li>Acidic(ph less than 4)</li><input type ="checkbox"></input>
+        <div className="filterSection">
+          <li>High ABV(Higher 6.0%)</li>
+          <input type ="checkbox"></input>
+        </div>
+        <div className="filterSection">
+          <li>Classic Range</li>
+          <input type ="checkbox"></input>
+        </div>
+        <div className="filterSection">
+          <li>Acidic(ph less than 4)</li>
+          <input type ="checkbox"></input>
+        </div>
       </ul>
     </div>
   )

@@ -11,7 +11,20 @@
   border-bottom: none;
   border-top: none;
 
+  .search {
+    width: 170px;
+    height: 30px;
+    margin: 15px;
+    font-size: 20px;
+  }
+
   ul {
     list-style: none;
+  }
+
+  .filterSection {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
   }
 }
