@@ -5,20 +5,20 @@
 
 .beerCard {
   border: 5px solid black;
-  height: 350px;
-  width: 250px;
+  height: 380px;
+  width: 285px;
   display: flex;
   padding: 10px;
   margin: 20px;
-  align-items: center;
+
+  &__image {
+    width: 100px;
+    height: 300px;
+  }
+  
+  &__info{
+    margin-left: 20px;
+  }
 }
 
-.beerImage {
-  width: 100px;
-  height: 300px;
-}
-
-.beerInfo {
-  margin-left: 20px;
-}
 

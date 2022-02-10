@@ -11,7 +11,7 @@
   border-bottom: none;
   border-top: none;
 
-  .search {
+  &__search {
     width: 170px;
     height: 30px;
     margin: 15px;
@@ -22,7 +22,7 @@
     list-style: none;
   }
 
-  .filterSection {
+  &__filterSection {
     display: flex;
     justify-content: space-between;
     margin: 10px;
