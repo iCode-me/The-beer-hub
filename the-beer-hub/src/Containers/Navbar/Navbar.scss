@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navBar {
+  border: 5px solid black;
+  width: 200px;
+  height: 100vh;
+  border-left: none;
+  border-bottom: none;
+  border-top: none;
+
+  ul {
+    list-style: none;
+  }
+}
