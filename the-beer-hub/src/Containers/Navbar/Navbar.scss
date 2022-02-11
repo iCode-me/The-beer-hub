@@ -10,21 +10,4 @@
   border-left: none;
   border-bottom: none;
   border-top: none;
-
-  &__search {
-    width: 170px;
-    height: 30px;
-    margin: 15px;
-    font-size: 20px;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  &__filterSection {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-  }
 }

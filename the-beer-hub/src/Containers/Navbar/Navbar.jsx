@@ -1,25 +1,18 @@
 import React from 'react'
 import './Navbar.scss'
+import SearchBox from '../../Components/SearchBox'
+import Filter from '../../Components/Filter'
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+  const {highABV, acidicPh, handleInput} = props
+
   return (
     <div className="navBar">
-      <input type="text" placeholder="Search..." className="navBar__search"></input>
 
-      <ul>
-        <div className="navBar__filterSection">
-          <li>High ABV(Higher 6.0%)</li>
-          <input type ="checkbox"></input>
-        </div>
-        <div className="navBar__filterSection">
-          <li>Classic Range</li>
-          <input type ="checkbox"></input>
-        </div>
-        <div className="navBar__filterSection">
-          <li>Acidic(ph less than 4)</li>
-          <input type ="checkbox"></input>
-        </div>
-      </ul>
+      <SearchBox handleInput={handleInput} />
+      <Filter highABV={highABV} acidicPh={acidicPh}/>
+    
     </div>
   )
 }

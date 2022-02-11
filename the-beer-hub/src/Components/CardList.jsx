@@ -1,13 +1,13 @@
 import React from 'react'
 import Card from './Card'
 import './CardList.scss'
-import Beers from '../Data/Beers'
 
-const CardList = () => {
 
-  // const { beersArr } = props;
+const CardList = (props) => {
 
-  const beersList = Beers.map(beer => <Card image={beer.image_url} name={beer.name} description={beer.description}/>)
+  const {beersArr} = props
+
+  const beersList = beersArr.map(beer => <Card image={beer.image_url} name={beer.name} description={beer.description}/>)
   console.log(beersList)
 
   return (

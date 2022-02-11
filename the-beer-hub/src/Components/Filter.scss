@@ -1,0 +1,12 @@
+.filter {
+
+  ul {
+    list-style: none;
+  }
+
+  &__filterSection {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+}
