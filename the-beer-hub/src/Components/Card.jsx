@@ -10,7 +10,7 @@ const Card = (props) => {
       <img src={image} alt="" className="beerCard__image"/>
       <div className="beerCard__info">
       <h2>{name}</h2>
-      <p>{description}</p>
+      <p>{description.slice(0,450)}</p>
       </div>
     </div>
   )

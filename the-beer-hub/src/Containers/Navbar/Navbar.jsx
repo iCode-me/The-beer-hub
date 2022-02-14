@@ -5,13 +5,13 @@ import Filter from '../../Components/Filter'
 
 const Navbar = (props) => {
 
-  const {highABV, acidicPh, handleInput} = props
+  const { handleInput, handleChangeAbv, handleChangeRange, handleChangePh } = props
 
   return (
     <div className="navBar">
 
       <SearchBox handleInput={handleInput} />
-      <Filter highABV={highABV} acidicPh={acidicPh}/>
+      <Filter handleChangeAbv={handleChangeAbv} handleChangeRange={handleChangeRange} handleChangePh={handleChangePh}/>
     
     </div>
   )

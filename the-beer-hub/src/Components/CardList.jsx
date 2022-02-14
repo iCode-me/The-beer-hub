@@ -8,7 +8,6 @@ const CardList = (props) => {
   const {beersArr} = props
 
   const beersList = beersArr.map(beer => <Card image={beer.image_url} name={beer.name} description={beer.description}/>)
-  console.log(beersList)
 
   return (
     <div className="listOfBeers">
