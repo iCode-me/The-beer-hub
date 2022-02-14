@@ -9,7 +9,7 @@ const App = () => {
   const [beers, setBeers] = useState([]);
   
   const getBeers = () => {
-    fetch("https://api.punkapi.com/v2/beers?page=2&per_page=80")
+    fetch("https://api.punkapi.com/v2/beers?per_page=80")
     .then(res => {
       return res.json()
     }).then(data => {
@@ -25,7 +25,6 @@ const App = () => {
   const [abvChecked, setAbvChecked] = useState(false);
   const [rangeChecked, setRangeChecked] = useState(false);
   const [phChecked, setPhChecked] = useState(false);
-
 
   const handleChangeAbv = (event) => {
     setAbvChecked(event.target.checked);
@@ -45,28 +44,37 @@ const App = () => {
   }
 
   const filteredBeers = beers.filter((beer) => {
-    if (abvChecked) {
-     return beer.name.toLowerCase().includes(searchTerm) && beer.abv > 6
-    } else if (rangeChecked) {
-    return beer.name.toLowerCase().includes(searchTerm) && beer.first_brewed.split("/")[1] < 2010 
+   
+    if (abvChecked && rangeChecked && phChecked) { 
+      return beer.name.toLowerCase().includes(searchTerm) && beer.abv > 6 && beer.first_brewed.slice(-4) <= 2010 && beer.ph < 4
+    } else if (abvChecked && rangeChecked) {
+      return beer.name.toLowerCase().includes(searchTerm) && beer.abv > 6 && beer.first_brewed.slice(-4) <= 2010 
+    } else if (abvChecked && phChecked) {
+      return beer.name.toLowerCase().includes(searchTerm) && beer.abv > 6 && beer.ph < 4 
+    } else if (rangeChecked && phChecked) {
+      return beer.name.toLowerCase().includes(searchTerm) && beer.first_brewed.slice(-4) <= 2010 && beer.ph < 4 
     } else if (phChecked) {
-      return beer.name.toLowerCase().includes(searchTerm) &&  beer.ph < 4
-    } else {
-      return beer.name.toLowerCase().includes(searchTerm);
-    }
+      return beer.name.toLowerCase().includes(searchTerm) &&  beer.ph < 4 
+    } else if (rangeChecked) {
+      return beer.name.toLowerCase().includes(searchTerm) && beer.first_brewed.slice(-4) <= 2010 
+    } else if (abvChecked) {
+      return beer.name.toLowerCase().includes(searchTerm) && beer.abv > 6
+    } else return beer.name.toLowerCase().includes(searchTerm);
   })
 
   return (
-    <div className="container">
-      <Navbar 
-      searchTerm={searchTerm} 
-      handleInput={handleInput} 
-      handleChangeAbv={handleChangeAbv}
-      handleChangeRange={handleChangeRange}
-      handleChangePh={handleChangePh}
-      />
-      <Main beersArr={filteredBeers} /> 
-    </div>
+    
+      <div className="container">
+        <Navbar 
+        searchTerm={searchTerm} 
+        handleInput={handleInput} 
+        handleChangeAbv={handleChangeAbv}
+        handleChangeRange={handleChangeRange}
+        handleChangePh={handleChangePh}
+        />
+    
+        <Main beersArr={filteredBeers} /> 
+      </div>
   )
 }
 

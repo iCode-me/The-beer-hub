@@ -1,6 +1,6 @@
 
 import React from 'react'
-import CardList from '../../Components/CardList'
+import CardList from '../../Components/CardList/CardList'
 import './Main.scss'
 
 const main = (props) => {
