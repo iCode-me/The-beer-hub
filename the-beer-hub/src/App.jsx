@@ -1,16 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.css';
 import Main from './Containers/Main/Main';
 import Navbar from './Containers/Navbar/Navbar'
 import React from 'react'
-import Beers from "./Data/Beers";
 
 const App = () => {
+
+  const [beers, setBeers] = useState([]);
+  
+  const getBeers = () => {
+    fetch("https://api.punkapi.com/v2/beers?page=2&per_page=80")
+    .then(res => {
+      return res.json()
+    }).then(data => {
+      setBeers(data)
+    })
+  }
+
+ useEffect (() => {
+   return getBeers()
+ },[])
 
   const [searchTerm, setSearchTerm] = useState("");
   const [abvChecked, setAbvChecked] = useState(false);
   const [rangeChecked, setRangeChecked] = useState(false);
   const [phChecked, setPhChecked] = useState(false);
+
 
   const handleChangeAbv = (event) => {
     setAbvChecked(event.target.checked);
@@ -29,7 +44,7 @@ const App = () => {
     setSearchTerm(newInput);
   }
 
-  const filteredBeers = Beers.filter((beer) => {
+  const filteredBeers = beers.filter((beer) => {
     if (abvChecked) {
      return beer.name.toLowerCase().includes(searchTerm) && beer.abv > 6
     } else if (rangeChecked) {
