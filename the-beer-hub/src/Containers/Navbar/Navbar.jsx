@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.scss'
-import SearchBox from '../../Components/SearchBox'
-import Filter from '../../Components/Filter'
+import SearchBox from '../../Components/SearchBox/SearchBox'
+import Filter from '../../Components/Filter/Filter'
 
 const Navbar = (props) => {
 
