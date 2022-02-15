@@ -9,16 +9,16 @@ const Filter = (props) => {
     <div className="filter">
       <ul>
       <div className="filter__filterSection">
-        <li>High ABV(Higher 6.0%)</li>
-        <input type ="checkbox" onChange={handleChangeAbv}></input>
+        <li>High ABV(&#62; 6.0%)</li>
+        <input type ="checkbox" onChange={handleChangeAbv} className="box"></input>
       </div>
       <div className="filter__filterSection">
         <li>Classic Range</li>
-        <input type ="checkbox" onChange={handleChangeRange}></input>
+        <input type ="checkbox" onChange={handleChangeRange} className="box"></input>
       </div>
       <div className="filter__filterSection">
-        <li>Acidic(ph less than 4)</li>
-        <input type ="checkbox" onChange={handleChangePh}></input>
+        <li>Acidic(ph &lt; 4)</li>
+        <input type ="checkbox" onChange={handleChangePh} className="box"></input>
       </div>
       </ul>
     </div>

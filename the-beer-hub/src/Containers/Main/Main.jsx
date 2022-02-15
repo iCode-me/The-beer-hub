@@ -8,7 +8,10 @@ const main = (props) => {
   const { beersArr } = props;
 
   return (
-    <div>
+    <div className="main">
+      <div className="main__heading">
+      <h1>THE BEER HUB</h1>
+      </div>
       <CardList beersArr={beersArr}/>
     </div>
   )

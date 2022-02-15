@@ -7,6 +7,17 @@
   &__filterSection {
     display: flex;
     justify-content: space-between;
+    padding: 5px;
     margin: 10px;
+    border: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(104, 250, 97);
+  }
+  
+  input.box {
+    width : 25px;
+    height : 25px;
+    background-color: rgb(104, 250, 97);
   }
 }

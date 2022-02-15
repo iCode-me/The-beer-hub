@@ -7,10 +7,12 @@ const Card = (props) => {
 
   return (
     <div className="beerCard">
-      <img src={image} alt="" className="beerCard__image"/>
-      <div className="beerCard__info">
-      <h2>{name}</h2>
-      <p>{description.slice(0,450)}</p>
+      <img src={image} alt="" className="beerCard__image" />
+      <div className="beerCard__name">
+        <h2>{name}</h2>
+        <div className="beerCard__description">
+          <p>{description}</p>
+        </div>
       </div>
     </div>
   )

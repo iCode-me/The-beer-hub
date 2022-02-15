@@ -5,19 +5,32 @@
 
 .beerCard {
   border: 5px solid black;
+  border-radius: 20px;
+  box-shadow: 15px 10px rgb(104, 250, 97); 
   height: 380px;
   width: 285px;
   display: flex;
   padding: 10px;
   margin: 20px;
+  color: black;
+  background: linear-gradient(55deg, #8dfcf5 0%, #44cad8 51%, #218ab0 85%);
+  font-size: 18px;
+  overflow: hidden;
 
   &__image {
-    width: 100px;
-    height: 300px;
+    width: 150px;
+    height: 350px;
   }
   
-  &__info{
+  &__name{
     margin-left: 20px;
+    font-weight: bold;
+  }
+
+  &__description {
+    padding-top: 20px;
+    font-weight: bold;
+    
   }
 }
 
